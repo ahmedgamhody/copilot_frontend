@@ -1,4 +1,4 @@
-import ChatSideBar from "@/components/ChatSideBar";
+import ChatSideBar from "@/components/chat/ChatSideBar";
 import ChatPage from "@/pages/ChatPage";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toggleSidebar } from "@/store/ui/uiSlice";

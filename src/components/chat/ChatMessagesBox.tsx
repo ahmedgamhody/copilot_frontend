@@ -17,7 +17,7 @@ export default function ChatMessagesBox({
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-[90vh] flex flex-col">
       <div className="flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-4">

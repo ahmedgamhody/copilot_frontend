@@ -15,7 +15,7 @@ export default function ChatInput({
   messages: Message[];
 }) {
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto">
       {messages.length === 0 && (
         <h1 className="text-3xl md:text-4xl font-light text-gray-800 text-center mb-8 italic">
           What's on your mind today?

@@ -5,7 +5,7 @@ import ChatMessagesBox from "@/components/chat/ChatMessagesBox";
 import { Message } from "@/interfaces";
 
 export default function ChatPage() {
-  useTitle("ChatPage");
+  useTitle("Chat Page");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isSending, setIsSending] = useState(false);

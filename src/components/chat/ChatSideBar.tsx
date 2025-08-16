@@ -54,32 +54,49 @@ export default function ChatSideBar() {
   function handleDelete(id: number) {
     console.log("Chat Deleted Successfully", id);
   }
-  return (
-    <aside className="h-[103vh] bg-gray-50 p-4 overflow-y-scroll">
-      <div className="flex items-center gap-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md duration-200">
-        <CircleFadingPlus className="text-secondary w-6 h-6 " />
-        <h1 className="text-lg font-semibold text-secondary">New chat</h1>
-      </div>
-      <div className="flex mt-4 items-center gap-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md duration-200">
-        <Search className="text-secondary w-6 h-6" />
-        <h1 className="text-lg font-semibold text-secondary">Search chats</h1>
-      </div>
-      <div className="flex mt-4 items-center gap-2 p-2 rounded-md justify-between">
-        <h1 className="text-lg font-semibold ">History</h1>
 
-        <CustomDialog
-          text="Delete All"
-          title="Confirm Deletion All Chats"
-          actionText="Delete All"
-          className="bg-red-500 text-white duration-300 hover:bg-red-700"
-        />
+  return (
+    <aside className="h-[103vh] bg-gray-50 flex flex-col">
+      {/* Fixed Header Section */}
+      <div className="p-4 flex-shrink-0">
+        <div className="flex items-center gap-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md duration-200">
+          <CircleFadingPlus className="text-secondary w-6 h-6" />
+          <h1 className="text-lg font-semibold text-secondary">New chat</h1>
+        </div>
+        <div className="flex mt-4 items-center gap-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md duration-200">
+          <Search className="text-secondary w-6 h-6" />
+          <h1 className="text-lg font-semibold text-secondary">Search chats</h1>
+        </div>
+        <div className="flex mt-4 items-center gap-2 p-2 rounded-md justify-between">
+          <h1 className="text-lg font-semibold">History</h1>
+          <CustomDialog
+            text="Delete All"
+            title="Confirm Deletion All Chats"
+            actionText="Delete All"
+            className="bg-red-500 text-white duration-300 hover:bg-red-700"
+          />
+        </div>
       </div>
-      <div className="p-2">
-        {chats.map((chat, index) => {
-          return (
-            <SideBarChat chat={chat} key={index} handleDelete={handleDelete} />
-          );
-        })}
+
+      {/* Scrollable Chats Section */}
+      <div className="flex-1 overflow-y-auto px-4">
+        <div className="p-2">
+          {chats.map((chat, index) => {
+            return (
+              <SideBarChat
+                chat={chat}
+                key={index}
+                handleDelete={handleDelete}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="p-4 flex-shrink-0 flex justify-center items-center">
+        <button className="bg-primary text-white px-6 py-2.5 rounded-md hover:bg-slate-600 transition duration-300 font-medium text-sm">
+          Logout
+        </button>
       </div>
     </aside>
   );
